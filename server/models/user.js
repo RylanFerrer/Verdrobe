@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
+const ClosetItem = require('./clothing')
 const UserSchema = new mongoose.Schema({
     email: {
         type:String,
@@ -9,7 +10,8 @@ const UserSchema = new mongoose.Schema({
     password: {
         type:String,
         default:''
-    }
+    },
+    closet: [ClosetItem.closetItemSchema]
 })
 UserSchema.pre('save', function(next) {
     // Check if document is new or a new password has been set

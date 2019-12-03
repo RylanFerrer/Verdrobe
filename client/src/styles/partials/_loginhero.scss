@@ -1,0 +1,94 @@
+.enjoy-css {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 auto;
+    border: 2px solid #8D86C9;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    color: #8D86C9;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,0);
+    -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  }
+  
+  .enjoy-css:hover {
+    color: rgba(255,255,255,1);
+    background: #8D86C9;
+  }
+  
+  .enjoy-css:active {
+    border: 2px solid #9c95db;
+    background: #9c95db;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+
+.login-hero {
+    height: 100vh;
+    background-color: #CAC4CE;
+    &__nav {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 2.5%;
+        height: 70px;
+        align-items: center;
+    }
+    &__image {
+        width: 90vw;
+    }
+    &__header {
+        color:white;
+        margin: 2px 0;
+        text-align: center;
+    }
+    &__content {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        height: 75%;
+    }
+    & h1 {
+        margin: 0;
+    }
+    &__btn {
+        &-container {
+            display: flex;
+            margin-top: 20px;
+
+        }
+    } 
+}
+@include medium {
+    .login-hero {
+        &__image {
+            width: 60vw;
+        }
+    }
+}
+@include large {
+.login-hero {
+    &__image {
+        width: 50vw;
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 75%;
+    }
+}
+
+}

@@ -1,0 +1,98 @@
+$cubic-out: cubic-bezier(.32,2.04,.85,.54);
+$cubic-in: cubic-bezier(.72,1.2,.71,.72);
+
+.kebab {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    box-sizing: border-box;
+ 
+    padding: 0 16px;
+    top: 12px;
+    figure {
+      background-color:white;
+
+      width: 6px;
+      height: 6px;
+      border-radius: 5px;
+      margin: 3px 0;
+    }
+     p {
+      color:black;
+      font-weight: bold;
+    }
+  }
+  
+  .middle {
+    transition: all 0.25s $cubic-in;
+    transform: scale(1);
+    position: relative;
+    box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+    -webkit-filter: blur(.1px);
+    filter: blur(.1px);
+  }
+  
+  .middle.active {
+    transform: scale(4.5);
+    transition: all 0.25s $cubic-out;
+    box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    margin-top: -1px;
+    color: white;
+    transition: all 0.2s $cubic-in;
+    font-size: 22px;
+    user-select: none;
+  }
+  
+.dropdown {
+  padding: 0 20px;
+  z-index: 1;
+  color:black;
+    background-color: white;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 3em;
+    transition: all 0.25s ease-out;
+    transform: scale(0);
+    transform-origin: 100% 0;
+    li {
+      padding: 0;
+      display: block;
+      width: 100%;
+      a {
+        width: 100%;
+        padding: 1em 18px;
+        display: inline-block;
+        white-space: pre;
+        box-sizing: border-box;
+        &:hover {
+          background: lighten(grey, 100%);
+        }
+      }
+    }
+  &:hover {
+    ul {
+      transform: scale(1);
+    }
+  }
+}
+
+.dropdown.active {
+  box-shadow:  2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+  transform: scale(1);
+  transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
+}
+  .cross.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.15s $cubic-out;
+  }
+ 

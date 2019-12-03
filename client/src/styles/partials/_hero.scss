@@ -1,0 +1,25 @@
+.hero {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #CAC4CE;
+    &__image {
+        width: 90vw;
+        margin-top: 50px;
+    }
+    &__header {
+        color: #8D86C9;
+    }
+}
+
+@include large{
+    .hero {
+        justify-content: flex-start;
+        &__image {
+            width: 50vw;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.outfit__icons {
+    height: 50px;
+    &-container {
+        margin-right: 20px
+    }
+}
+.edit {
+    cursor: pointer;
+}
+.outfit{
+    padding: 0 12.5%;
+    &__row {
+        display: flex;
+        align-items: center;
+        border-bottom: solid 0.5px black;
+    }
+    &__name {
+        margin-right: auto;
+    }
+    &__image {
+        width: 70%;
+    }
+    &__header {
+        text-align: center;
+        &-container {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+        }
+    }
+}
+
+
+  .slick-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+  .side {
+      padding: 0 10%;
+  }

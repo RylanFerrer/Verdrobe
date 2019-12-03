@@ -1,0 +1,65 @@
+ .select{
+     padding: 5% 0;
+     width: 50%;
+     margin: 0 auto
+ }
+.logo-header {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 45px;
+}
+.info-overlay {
+   
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+}
+.card {
+    border-radius: 10px;
+    margin: 10px;
+    
+    &__overlay {
+        border: 1.5px solid #e1e1e1;
+        border-radius: 3px;
+        &:hover .info-overlay {
+            opacity: 0.95;
+          }
+        position: relative;
+        color:white
+    }
+    &-container {
+        padding: 0 10%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+       
+    }
+}
+@include medium {
+    .card {
+        &-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+}
+@include huge {
+.card {
+    margin: 30px;
+    
+    &-container {
+        padding: 0 5%;
+        display: flex;
+    }
+   
+}
+}
