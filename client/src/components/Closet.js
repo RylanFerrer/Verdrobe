@@ -12,7 +12,6 @@ export default class Closet extends Component {
         name: ""
     }
     refreshOutfits = () => {
-        console.log("REFRESH")
         Axios.get(`/create/${this.props.id}`).then(res => {
             this.setState({
                 outfits: res.data.outfit,

@@ -18,7 +18,7 @@ export default class Modal extends React.Component {
       colors: this.state.colorOptions,
       apparel: this.state.apparelOptions
     }).then(res => {
-      this.props.history.push('/');
+  
     })
   }
   onChange = (event) => {

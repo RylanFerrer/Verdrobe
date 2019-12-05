@@ -6,7 +6,6 @@ export default class Kebab extends Component {
         kebabClass: false
     }
     createOutfit = () => {
-        console.log("CLICKED")
         Axios.post(`/create/${this.props.id}`, {
             apparel: this.props.clothingId,
         }).then(res => {

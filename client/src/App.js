@@ -1,12 +1,14 @@
 import React from 'react';
 import Upload from './components/Upload'
-import Login from './components/Login'
+import FeedFit from './components/FeedFit'
+import Profile from "./components/Profile"
 import {Switch, Route} from 'react-router-dom'
 import Home from './components/Home'
 import LoginHero from './components/LoginHero'
 import Auth from './components/Auth'
 import Outfits from './components/Outfits'
 import Fits from "./components/Fits"
+import Feed from "./components/Feed"
 import "./styles/main.css"
 import "font-awesome/css/font-awesome.min.css";
 import './App.css';
@@ -19,6 +21,9 @@ function App() {
     <Route path= '/login' component={LoginHero} />
     <Route path = "/upload" component = {Auth(Upload)}/>
     <Route path = "/outfits/:id" component = {Auth(Fits)}/>
+    <Route path = "/feed" exact component = {Auth(Feed)}/>
+    <Route path = "/feed/:id" exact component = {Auth(FeedFit)}/>
+    <Route path = "/profile/:id" exact component = {Auth(Profile)}/>
  
   </Switch>
   );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Header from "./Header"
 import Axios from '../../../server/node_modules/axios'
+import Header from "./Header"
 import {Link} from 'react-router-dom'
 import arrow from "../assets/Icons/SVG/Icon-arrow-right.svg"
 
@@ -18,7 +18,6 @@ export default class Outfits extends Component {
     }
    
     render() {
-        console.log(this.state.outfits)
        const outfits = this.state.outfits && this.state.outfits.map(outfit => {
             const images = outfit.clothing.map((item, index) => {
                 if(index < 3) 

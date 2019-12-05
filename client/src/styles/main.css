@@ -251,6 +251,10 @@
   }
 }
 
+.Test {
+  margin-right: 20px;
+}
+
 .select {
   padding: 5% 0;
   width: 50%;
@@ -284,6 +288,7 @@
 }
 
 .card__overlay {
+  height: 97%;
   border: 1.5px solid #e1e1e1;
   border-radius: 3px;
   position: relative;
@@ -783,5 +788,35 @@
 
 .upload__image {
   width: 50%;
+}
+
+.feed__container {
+  padding: 0 10%;
+}
+
+.feed__post-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+  border-bottom: black 0.5px solid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feed__text {
+  margin-right: auto;
+}
+
+.feed__image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.feed__outfit-text {
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

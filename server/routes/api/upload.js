@@ -20,46 +20,52 @@ app.use(fileUpload({
 }));
 
 const clarifaiApp = new Clarifai.App({
-    apiKey: key.cloudinary
+    apiKey: key.clarifai
 });
 
 
 router.post("/:id", asyncHandler(async(req,res) => {
-    console.log(req.params.id)
-    //Upload the image in cloudinary and get the image url 
-    const image =  await cloudinary.uploader.upload(req.files.file.tempFilePath)
-    //Make Predictions on that image
-    const [resultOne,resultTwo] = await Promise.all([clarifaiApp.models.predict("e0be3b9d6a454f0493ac3a30784001ff", image.url),clarifaiApp.models.predict("eeed0b6733a644cea07cf4c60f87ebb7", image.url)])
+    try{
+        //Upload the image in cloudinary and get the image url 
+        const image =  await cloudinary.uploader.upload(req.files.file.tempFilePath)
+        //Make Predictions on that image
+        const [resultOne,resultTwo] = await Promise.all([clarifaiApp.models.predict("e0be3b9d6a454f0493ac3a30784001ff", image.url),clarifaiApp.models.predict("eeed0b6733a644cea07cf4c60f87ebb7", image.url)])
+        
+        //Makr the schema for clothing and then save it
+        const clothes = new ClosetItem ({
+            image: image.url,
+            user: req.params.id
+        })
+        clothes.save((err) => {
+            if(!err) {
+                console.log("Saved");
+            }
+        })
+        //Map through the color output so we get an object with the hex value and color name
+        const colors = resultTwo.outputs[0].data.colors.map(color => {
+        return color.w3c
+        })
+        res.status(200).json({
+            clothingId: clothes._id,
+            apparel: resultOne.outputs[0].data.concepts,
+            colors: colors
+        })
+    } catch (err) {
+        res.status(400).json({msg: err})
+    }
     
-    //Makr the schema for clothing and then save it
-    const clothes = new ClosetItem ({
-        image: image.url,
-        user: req.params.id
-    })
-    clothes.save((err) => {
-        if(!err) {
-            console.log("Saved");
-        }
-    })
 
-  //Map through the color output so we get an object with the hex value and color name
-  const colors = resultTwo.outputs[0].data.colors.map(color => {
-      return color.w3c
-  })
+  
   
   //Send the data to the front-end so the user can choose what they want to see
-    res.json({
-        clothingId: clothes._id,
-        apparel: resultOne.outputs[0].data.concepts,
-        colors: colors
-    })
+   
 }));
 
 router.post('/:id/tags', (req,res) => {
     console.log(req.body.apparel, req.body.colors)
     ClosetItem.findOneAndUpdate({ _id: req.body.clothingId}, { "$set": {colorTags: req.body.colors, apparelTags: req.body.apparel}}, (err,user) =>{
-        console.log(user)
     })
+    res.redirect("/")
 });
 
 module.exports = router

@@ -17,6 +17,7 @@ app.use(cookieParser());
 mongoose.connect("mongodb://localhost:27017/verdrobeDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 app.use('/upload', require("./routes/api/upload"))
+app.use('/feed', require("./routes/api/feed"))
 app.use('/create', require("./routes/api/create"))
 app.use('/register',require('./routes/api/register'));
 app.use('/auth', require('./routes/api/auth'));

@@ -1,4 +1,7 @@
- .select{
+.Test {
+    margin-right: 20px;
+}
+.select{
      padding: 5% 0;
      width: 50%;
      margin: 0 auto
@@ -9,7 +12,6 @@
     font-size: 45px;
 }
 .info-overlay {
-   
     z-index: 1;
     position: absolute;
     top: 0;
@@ -27,6 +29,7 @@
     margin: 10px;
     
     &__overlay {
+        height: 97%;
         border: 1.5px solid #e1e1e1;
         border-radius: 3px;
         &:hover .info-overlay {

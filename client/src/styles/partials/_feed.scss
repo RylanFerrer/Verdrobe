@@ -1,0 +1,27 @@
+.feed {
+    &__container {
+        padding: 0 10%;
+    }
+    &__post {
+        &-container {
+            display: flex;
+            margin-top: 50px;
+            border-bottom: black 0.5px solid;
+            align-items: center;
+        }
+    }
+    &__text {
+        margin-right: auto;
+    }
+    &__image {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    &__outfit {
+        &-text {
+            text-align: center;
+        }
+    }
+}
