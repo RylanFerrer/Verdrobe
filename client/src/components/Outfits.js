@@ -22,25 +22,28 @@ export default class Outfits extends Component {
             const images = outfit.clothing.map((item, index) => {
                 if(index < 3) 
                 {
-                return<img className = "outfit__icons"src = {item.image} /> 
+                return<img alt = "img" className = "outfit__icons"src = {item.image} /> 
                 } 
                 return false
             })
             return (
                 <div className = "outfit__row">
-                    <h2 className = "outfit__name">{outfit.name}</h2>
+                    <h4 className = "outfit__name">{outfit.name}</h4>
                     <div className = "outfit__icons-container">
                         {images}
                     </div>
             
-                    <Link to = {`/outfits/${outfit._id}`}><img src = {arrow}/></Link>
+                    <Link to = {`/outfits/${outfit._id}`}><img  alt = "arrow" src = {arrow}/></Link>
                 </div> 
                 )
           
         })
         return (
             <>
-            <Header/>
+            <div className = "nav__fit">
+                <Header id = {this.props.id} color = "white"/>
+            </div>
+           
             <div className = "outfit">
                 {outfits}
             </div>

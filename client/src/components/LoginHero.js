@@ -11,10 +11,10 @@ export default function LoginHero(props) {
             <div className = "login-hero__content">
                 <img className = "login-hero__image" alt =  "hero" src = {Heroimg}></img>
                 <div>
-                    <h1 className = "login-hero__header">Welcome To Verdrobe.</h1>
-                    <h2 className = "login-hero__header"> Organize your clothing <br/> and curate outfits all in one place.</h2>
+                    <h1 className = "login-hero__header">Welcome to Verdrobe</h1>
+                    <h3 className = "login-hero__header login-hero__header--sub"> Organize your clothing and curate outfits all in one place.</h3>
                     <div className = "login-hero__btn-container">
-                        <button class="enjoy-css">Register</button>
+                        <button class="enjoy-css">Join Us</button>
                     </div>
       
                 </div>

@@ -1,8 +1,11 @@
 .Test {
     margin-right: 20px;
 }
+.closet__container {
+    background-color: #fafafa;
+}
 .select{
-     padding: 5% 0;
+     padding: 5% 0 7% 0;
      width: 50%;
      margin: 0 auto
  }
@@ -26,12 +29,10 @@
 }
 .card {
     border-radius: 10px;
-    margin: 10px;
+    margin: 2px;
     
     &__overlay {
         height: 97%;
-        border: 1.5px solid #e1e1e1;
-        border-radius: 3px;
         &:hover .info-overlay {
             opacity: 0.95;
           }
@@ -39,11 +40,17 @@
         color:white
     }
     &-container {
-        padding: 0 10%;
+        padding: 0  0 50px 0;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-       
+       &--profile {
+           padding-top: 5%;
+       }
+    }
+    &__image {
+        max-height: 100px;
+        max-width: 100px;
     }
 }
 @include medium {
@@ -52,6 +59,10 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+        }
+        &__image {
+            max-height: 200px;
+            max-width: 200px;
         }
     }
 }

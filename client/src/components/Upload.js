@@ -50,7 +50,7 @@ export default class Upload extends Component {
   render() {
     return ( 
       <div className = "upload">
-        <Header/>
+        <Header id = {this.props.id} />
         <Modal clothingId = {this.state.clothingId} id  = {this.props.id}colors = {this.state.colors} apparel = {this.state.apparel} cancel = {this.cancel} display = {this.state.display}  />
       `<div className = "upload__content">
         <img className = "upload__image"alt = "upload" src= {uploadImg}/>

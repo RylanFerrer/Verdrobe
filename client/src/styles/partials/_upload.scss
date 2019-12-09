@@ -1,13 +1,26 @@
 .form { 
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    
 }
 .btn {
+    &-1 {
+      text-align: center;
+      margin: 10px 20px;
+      height:20px ;
+      background-color: #8D86C9;
+      box-shadow: 0 6px darken(#8D86C9, 10%);
+      transition: none;
+    }
     &__upload {
         height:52px ;
         background-color: red;
         box-shadow: 0 6px darken(red, 10%);
         transition: none;
+        margin: 10px 20px;
         &:hover {
             box-shadow: 0 4px darken(red, 10%);
             top: 2px;
@@ -37,12 +50,6 @@
     vertical-align: middle;
  
     &.btn-1 {
-      margin: 0 20px;
-      height:20px ;
-      background-color: #8D86C9;
-      box-shadow: 0 6px darken(#8D86C9, 10%);
-      transition: none;
-  
       &:hover {
         box-shadow: 0 4px darken(#8D86C9, 10%);
         top: 2px;
@@ -50,16 +57,44 @@
     }
 }
 .upload { 
-    height: 100vh;
+  height: 100vh;
     background-color:#CAC4CE ;
-
+    &__form {
+      padding-bottom: 30px;
+    }
     &__content {
+      flex-direction: column;
         height: 80vh;
         padding: 0 5%;
         display: flex;
         align-items: center;
     }
     &__image {
-        width: 50%;
+        width: 75%;
     }
+}
+@include medium {
+  .upload {
+    &__image {
+      width: 60%;
+  }
+  }
+  .form { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@include large {
+  .upload {
+    &__content {
+      flex-direction: row;
+    }
+
+    &__image {
+      width: 50%;
+    }
+  }
+}
 }

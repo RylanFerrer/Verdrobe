@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import "./partials/fonts";
 @import "./partials/breakpoints";
 @import "./partials/hero";
 @import "./partials/modal";
@@ -11,4 +13,9 @@
 @import "./partials/loginhero";
 @import "./partials/upload";
 @import "./partials/feed";
+@import "./partials/profile";
 
+ body {
+
+    font-family: AvenirRegular
+}

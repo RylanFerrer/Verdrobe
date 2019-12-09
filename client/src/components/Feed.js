@@ -17,7 +17,7 @@ export default function Feed(props) {
           };
 
           loadData()
-    }, [`/feed/${props.id}`])
+    })
      
     if (feed === undefined) 
     return <> <h1>Loading...</h1></>
@@ -25,15 +25,17 @@ export default function Feed(props) {
    const feedItem =  feed.map(item => {
       return (
         <div className = "feed__post-container">
-          <Link to = {`/profile/${item.user}`}><img className = "feed__image" src = {item.profile}/> </Link>
+          <Link to = {`/profile/${item.user}`}><img  alt = "profile" className = "feed__image" src = {item.profile}/> </Link>
           <h5 className = "feed__text">{item.name} {item.content}: {item.outfitName}</h5> 
-          <Link to = {`/feed/${item.outfit}`}><img src = {arrow}/> </Link>  
+          <Link to = {`/feed/${item.outfit}`}><img alt = "arrow" src = {arrow}/> </Link>  
         </div>
       );
     })
     return (
         <div>
-            <Header/>
+          <div className = "nav__fit">
+            <Header id = {props.id} color = "white"/>
+          </div>
             <div className = "feed__container">
               {feedItem}
             </div>

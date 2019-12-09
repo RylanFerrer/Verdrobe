@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const secret ="thisismysecretn";
 
 router.post("/", (req,res) => {
-   
     const {email,password} = req.body;
     User.findOne({email}, (err,user) => {
         // if there is a server error

@@ -1,0 +1,68 @@
+.profile {
+    &__user {
+        margin:0 0 15px 0 ;
+    }
+    &__button {
+        background-color: #fafafa;
+        border:1px solid black;
+        margin:0 0 18px 0 ;
+    }
+    &__container {
+        margin: 30px 10% 0 0;
+    }
+    &__info {
+        display: flex;
+        font-weight: 100;
+    }
+    &__image {
+        border: 1px solid #fafafa;
+        margin: 20px 25px;
+        width: 77px;
+        height: 77px;
+        border-radius: 50%;
+    }
+    &__followers {
+        margin:0;
+        &-text {
+            margin: 0;
+        }
+    }
+    &__following {
+        margin: 0;
+        &-text {
+            margin:0;
+        }
+    }
+}
+
+@include medium {
+    .profile {
+        padding: 0 10%;
+        &__image {
+            height: 150px;
+            width: 150px;
+            margin-right: 8vw;
+        }
+        &__container {
+            margin: 60px 5% 0 0;
+        }
+        &__button {
+            width: 111px;
+            font-size: 19px;
+        }
+        &__user {
+            font-size: 25px;
+        }
+        &__followers, &__following, &__followers-text, &__following-text {
+            font-size: 20px;
+        }
+    }
+}
+
+@include large {
+    .profile {
+        &__info {
+            justify-content: center;
+        }
+    }
+}

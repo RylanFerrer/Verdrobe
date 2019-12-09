@@ -1,9 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 export default function withAuth(ComponentToProtect) {
   return class extends Component {
- 
     constructor() {
       super();
       this.state = {
@@ -13,6 +12,7 @@ export default function withAuth(ComponentToProtect) {
       };
     }
     componentDidMount() {
+      //eslint-disable-next-line
       axios.get('/checkToken').then(res => {
         if (res.status === 200) {
           this.setState({ loading: false, id: res.data.id });

@@ -1,6 +1,5 @@
 import Header from "./Header"
 import React, { Component } from 'react'
-import Slider from "react-slick";
 import Axios from "axios"
 import EditModal from './EditModal'
 export default class Fits extends Component {
@@ -26,35 +25,25 @@ export default class Fits extends Component {
         })
     }
     render() {
-        const settings = {
-            dots: true,
-            infinite: false,
-            speed: 500,
-            slidesToScroll: 1,
-            slidesToShow: 4,
-            centerMode: false,
-            className: "test",
-            accessibility: true
-          };
-
+     
         const stuff = this.state.outfit && this.state.outfit.clothing.map(clothe => {
-            return <div><img className = "outfit__image" src = {clothe.image} alt = "clothing" /></div>
+            return <div><img className = "card__image" src = {clothe.image} alt = "clothing" /></div>
         })
         
         if(this.state.outfit !== undefined)
         {
         return (
             <div>
-            <Header/>
+            <div className = "nav__fit">
+                <Header id = {this.props.id} color = "white"/>
+            </div>
             <EditModal  refresh = {this.refresh}id = {this.props.match.params.id} click  = {() => this.setState({display: "none"})}display = {this.state.display}/>
             <div className = "outfit__header-container">
             <h1 className = "outfit__header">{this.state.outfit.name}</h1>
             <i class="fa fa-2x fa-edit edit" onClick  = {() => this.setState({display: "flex"})}></i>
             </div>
-            <div className = "side">
-            <Slider  {...settings}>
-            {stuff}
-            </Slider>
+            <div className = "card-container">
+                {stuff}
             </div>
             </div>
         )

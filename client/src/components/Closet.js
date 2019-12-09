@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Axios from 'axios'
 import Selector from './Select'
 import Kebab from "./Kebab"
-import Header from './Header'
 import Hero from './Hero'
 export default class Closet extends Component {
     state = {
@@ -19,9 +18,7 @@ export default class Closet extends Component {
         })
     }
     onChangeFunc = optionSelected => {
-        const value = optionSelected.value;
         const label = optionSelected.label;
-        console.log(label)
         this.setState({
             selected: label
         })
@@ -41,16 +38,15 @@ export default class Closet extends Component {
         })
     }
     render() {
-       const wardrobe = this.state.clothing && this.state.clothing.map(cloth => {
+       const wardrobe = this.state.clothing && this.state.clothing.map((cloth,index) => {
            if(cloth.apparelTags.includes(this.state.selected)  || cloth.colorTags.includes(this.state.selected) || this.state.selected === "All")
            {
             return ( 
-                <div className = "card">
+                <div key = {index} className = "card">
                     <div className = "card__overlay">
-                        <img  height = {200} width = {200}src = {cloth.image}/>
+                        <img  className = "card__image"alt = "somthing" src = {cloth.image}/>
                         <Kebab refresh = {this.refreshOutfits} outfits = {this.state.outfits} clothingId = {cloth._id} id = {this.props.id}/>
                     </div>
-             
                 </div>
             )
            }
@@ -58,12 +54,14 @@ export default class Closet extends Component {
         })
         return (
             <div>
-                <Header/>
-                <Hero name = {this.state.name}/>
-                <Selector wardrobe = {this.state.clothing} change = {this.onChangeFunc}/>
-                <div className = "card-container">
-                {wardrobe}
+                <Hero  id = {this.props.id}name = {this.state.name}/>
+                <div className = "closet__container">
+                    <Selector wardrobe = {this.state.clothing} change = {this.onChangeFunc}/>
+                    <div className = "card-container">
+                    {wardrobe}
+                    </div>
                 </div>
+                
             </div>
            
         )

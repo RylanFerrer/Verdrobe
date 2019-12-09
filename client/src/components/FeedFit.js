@@ -15,24 +15,26 @@ export default function FeedFit(props) {
           };
 
           loadData()
-    }, [`/outfit/${props.match.params.id}`])
+    })
 
     if(clothes === undefined) {
         return <><h1>Loading...</h1></>
     }
-    const fit = clothes.clothing.map(clothe => {
+    const fit = clothes.clothing.map((clothe,index) => {
         return  (
         
-        <div className = "card">
+        <div key = {index} className = "card">
             <div className = "card__overlay">
-                <img  height = {200} width = {200}src = {clothe.image}/>
+                <img alt ="clothes" height = {200} width = {200}src = {clothe.image}/>
             </div>
         </div>
         );
     })
     return (
         <div>
-        <Header/>
+        <div className = "nav__fit">
+            <Header id = {props.id}color = "white"/>
+        </div>
             <h1 className  = "feed__outfit-text">{clothes.name}</h1>
             <div className = "card-container">
                 {fit}

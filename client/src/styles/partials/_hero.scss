@@ -1,25 +1,32 @@
 .hero {
+    &-back {
+        background: linear-gradient( #725ac1, #8d86c9, #cac4ce);
+    }
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #CAC4CE;
+    justify-content: flex-start;
+
     &__image {
-        width: 90vw;
+   
+        height: 80vw;
         margin-top: 50px;
     }
     &__header {
-        color: #8D86C9;
+        font-family: AvenirRegular;
+        color: white;
+        text-align: center;
     }
+}
+@include medium {
+    .hero{
+        &__image {
+            height: 40vw
+        }
+
+    }
+  
 }
 
-@include large{
-    .hero {
-        justify-content: flex-start;
-        &__image {
-            width: 50vw;
-        }
-    }
-}

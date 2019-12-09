@@ -31,8 +31,8 @@ export default class Kebab extends Component {
         })
     }
     render() {
-       const fits =  this.props.outfits && this.props.outfits.map(outfit => {
-            return <li onClick = {() => this.updateOutfit(outfit._id)}><h3>{outfit.name}</h3></li>
+       const fits =  this.props.outfits && this.props.outfits.map((outfit,index) => {
+            return <li key = {index} onClick = {() => this.updateOutfit(outfit._id)}><h3 className = "dropdown__text">{outfit.name}</h3></li>
         })
         return (
             <>
@@ -44,7 +44,7 @@ export default class Kebab extends Component {
         
             </div>
             <ul className= {`dropdown ${this.state.kebabClass === false ? '': "active"}`}>
-            <h3 onClick = {this.createOutfit} >Create New </h3>
+            <h3 className = "dropdown__text" onClick = {this.createOutfit} >Create New </h3>
             {fits}
           </ul>
            

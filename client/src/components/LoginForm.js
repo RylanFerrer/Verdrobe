@@ -38,6 +38,7 @@ export default class LoginForm extends Component {
         return (
             <form onSubmit={this.onSubmit}>
             <input
+              className = "login__input"
               type="email"
               name="email"
               placeholder="Enter email"
@@ -46,6 +47,7 @@ export default class LoginForm extends Component {
               required
             />
             <input
+              className = "login__input"
               type="password"
               name="password"
               placeholder="Enter password"
@@ -53,7 +55,7 @@ export default class LoginForm extends Component {
               onChange={this.handleInputChange}
               required
             />
-           <input type="submit" value="Submit"/>
+           <input className = "login__button" type="submit" value="Login"/>
           </form>
         )
     }

@@ -1,10 +1,12 @@
 import React from "react";
 import Axios from "../../../server/node_modules/axios";
+import {Redirect} from "react-router-dom"
 export default class Modal extends React.Component {
-  
+
   state = {
     apparelOptions: [],
-    colorOptions: []
+    colorOptions: [],
+    redirect: false
   }
   handleChange = (e) =>  {
     const item = e.target.name;
@@ -18,7 +20,9 @@ export default class Modal extends React.Component {
       colors: this.state.colorOptions,
       apparel: this.state.apparelOptions
     }).then(res => {
-  
+      this.setState({
+        redirect: true
+      })
     })
   }
   onChange = (event) => {
@@ -59,23 +63,34 @@ export default class Modal extends React.Component {
  
   render() {
     const apparel = this.props.apparel && this.props.apparel.map(clothe => {
-      return<> <label>{clothe.name}</label> <input type="checkbox" value={clothe.name} onChange={event => this.onChange(event)} /> </>
+      return<> <div><label>{clothe.name}</label> <input type="checkbox" value={clothe.name} onChange={event => this.onChange(event)} /></div> </>
     })
     const colors = this.props.colors && this.props.colors.map(color => {
       if (color.name !== "White")
-      {
-        return<> <label style = {{backgroundColor:color.hex}}>{color.name}</label> <input type="checkbox" name = {color.hex} value={color.name} onChange={event => this.onChangeColor(event)} /> </>
+      { 
+        return<><div> <label style = {{textShadow: "red"}}>{color.name}</label> <input type="checkbox" name = {color.hex} value={color.name} onChange={event => this.onChangeColor(event)} /> </div></>
       }
-      return<> <label>{color.name}</label> <input type="checkbox" value={color.name} onChange={event => this.onChangeColor(event)} /> </>
+      return<> <div><label>{color.name}</label> <input type="checkbox" value={color.name} onChange={event => this.onChangeColor(event)} /> </div></>
     })
+
+    if(this.state.redirect === true) {
+      return (<Redirect to="/" />)
+    }
     return (
       <>
         <div className="modal" style={{ display: `${this.props.display}`, position: "fixed" }}>
           <div className="modal__content">
             <h2 className="modal__content-header">What tags match with your image?</h2>
-            
+            <div className = "modal__tag-container">
+              <div>
               {apparel}
+              </div>
+              <div>
               {colors}
+              </div>
+            </div>
+         
+             
               <button onClick={() => this.submit()} className="modal__content-cancel">
                 Submit
               </button>

@@ -1,16 +1,16 @@
 .enjoy-css {
+    font-family: AvenirRegular;
+    font-size: 20px;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     width: 150px;
     height: 50px;
     cursor: pointer;
-    margin: 0 auto;
     border: 2px solid #8D86C9;
     -webkit-border-radius: 40px;
     border-radius: 40px;
     color: #8D86C9;
-    text-align: center;
     -o-text-overflow: clip;
     text-overflow: clip;
     letter-spacing: 1px;
@@ -34,7 +34,22 @@
     -o-transition: none;
     transition: none;
   }
-
+.login__button {
+    border: none;
+    background-color: #725ac1;
+    height: 3rem;
+    color: white;
+    width: 4.2rem;
+    font-size: 1.125rem;
+    border-radius: 3px;
+}
+.login__input {
+    margin: 0 5px;
+    border: solid #fafafa 1px;
+    text-indent: 5px;
+    width: 35%;
+    height: 40px;
+}
 .login-hero {
     height: 100vh;
     background-color: #CAC4CE;
@@ -46,14 +61,19 @@
         align-items: center;
     }
     &__image {
-        width: 90vw;
+        width: 80vw;
     }
     &__header {
+        font-family: 'AvenirBold', serif;
         color:white;
         margin: 2px 0;
         text-align: center;
+        &--sub {
+            margin-top: 20px;
+        }
     }
     &__content {
+        padding-top: 60px;
         flex-direction: column;
         display: flex;
         align-items: center;
@@ -65,7 +85,8 @@
     &__btn {
         &-container {
             display: flex;
-            margin-top: 20px;
+            justify-content: center;
+            margin-top: 30px;
 
         }
     } 
@@ -83,11 +104,20 @@
         width: 50vw;
     }
     &__content {
+        padding-top: 0;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         height: 75%;
+    }
+    &__header {
+        text-align: left;
+    }
+    &__btn {
+        &-container {
+            justify-content: flex-end;
+        }
     }
 }
 
