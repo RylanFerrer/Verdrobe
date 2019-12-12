@@ -9,25 +9,27 @@ export default class Outfits extends Component {
         outfits: undefined
     }
      
-    async componentDidMount() {
-       const  outfits = await Axios.get(`create/${this.props.id}`)
-       console.log(outfits)
-        this.setState({
-            outfits: outfits.data.outfit
-       })
+    componentDidMount() {
+        Axios.get(`create/${this.props.id}`).then(res => {
+            this.setState({
+                outfits: res.data.outfit
+           })
+        })
+       
+       
     }
    
     render() {
-       const outfits = this.state.outfits && this.state.outfits.map(outfit => {
+       const outfits = this.state.outfits && this.state.outfits.map((outfit, i) => {
             const images = outfit.clothing.map((item, index) => {
                 if(index < 3) 
                 {
-                return<img alt = "img" className = "outfit__icons"src = {item.image} /> 
+                return<img key = {index} alt = "img" className = "outfit__icons"src = {item.image} /> 
                 } 
                 return false
             })
             return (
-                <div className = "outfit__row">
+                <div  key = {i} className = "outfit__row">
                     <h4 className = "outfit__name">{outfit.name}</h4>
                     <div className = "outfit__icons-container">
                         {images}

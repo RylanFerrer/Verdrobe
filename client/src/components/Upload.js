@@ -27,7 +27,6 @@ export default class Upload extends Component {
     const data = new FormData();
     data.append('file', event.target.file.files[0]);
     Axios.post(`/upload/${this.props.id}`, data).then(res =>{
-      console.log(res.data)
       if(res.status === 200)
       {
       this.setState({

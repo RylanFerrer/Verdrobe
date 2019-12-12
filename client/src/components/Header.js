@@ -1,10 +1,20 @@
 
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom'
+import axios from 'axios'
 export default function Header(props) {
    const  [display, setDisplay] = useState("none")
+   const [redirect, setRedirect] = useState(false)
    let changeDisplay =  display === "none"? "flex": "none" 
    let color = props.color === 'white' ? "link--color" : ""
+   const removeCoookie = () => {
+     axios.get("/logout",  { withCredentials: true }).then(
+       setRedirect(true)
+     )
+   }
+    if(redirect === true) {
+     return  <Redirect to = "/login"/>
+    }
     return (
         <nav>
         <div className="topnav">
@@ -19,6 +29,7 @@ export default function Header(props) {
           <Link className = {`${color} drop`} to = "/outfits">Outfits</Link>
           <Link  className = {`${color} drop`} to = "/feed">Feed</Link>
           <Link  className = {`${color} drop`} to = {`/profile/${props.id}`}>Profile</Link>
+          <li onClick  = {removeCoookie}className = {`${color} drop`} to = {`/profile/${props.id}`}>Logout</li>
 
         </div>
 

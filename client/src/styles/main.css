@@ -96,6 +96,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 10%;
   margin-bottom: 20px;
 }
 
@@ -103,7 +104,7 @@
   padding: 0 5%;
   opacity: 1;
   background-color: white;
-  height: 40%;
+  height: 35%;
   width: 80%;
   border-radius: 5px;
 }
@@ -190,6 +191,7 @@
   text-align: center;
   border: none;
   text-align: center;
+  margin: 0 5px;
   background-color: #8d86c9;
   color: white;
   border-radius: 5px;
@@ -335,7 +337,7 @@
 }
 
 .card-container {
-  padding: 0  0 50px 0;
+  padding: 15px  5% 50px 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -791,6 +793,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .login__input {
+    margin-top: 50px;
+  }
   .login-hero__image {
     width: 60vw;
   }
@@ -1065,6 +1070,13 @@
 }
 
 body {
+  background-color: #fafafa;
   font-family: AvenirRegular;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  /* make scrollbar transparent */
 }
 /*# sourceMappingURL=main.css.map */

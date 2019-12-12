@@ -28,12 +28,13 @@ router.post("/:id", asyncHandler(async(req,res) => {
     try{
         //Upload the image in cloudinary and get the image url 
         const image =  await cloudinary.uploader.upload(req.files.file.tempFilePath)
+        console.log("Image Uploaded")
         //Make Predictions on that image
-        const [resultOne,resultTwo] = await Promise.all([clarifaiApp.models.predict("e0be3b9d6a454f0493ac3a30784001ff", image.url),clarifaiApp.models.predict("eeed0b6733a644cea07cf4c60f87ebb7", image.url)])
-        
+        const [resultOne,resultTwo] = await Promise.all([clarifaiApp.models.predict("e0be3b9d6a454f0493ac3a30784001ff", image),clarifaiApp.models.predict("eeed0b6733a644cea07cf4c60f87ebb7", image)])
+        console.log("Predictions Predicted")
         //Makr the schema for clothing and then save it
         const clothes = new ClosetItem ({
-            image: image.url,
+            image: image,
             user: req.params.id
         })
         clothes.save((err) => {

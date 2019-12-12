@@ -12,7 +12,7 @@ router.get('/:id', asyncHandler(async(req,res) => {
     })
     // Sort the posts array from most recent to oldest
     allPosts.sort((a, b) => {
-        return a.date-b.date
+        return b.date-a.date
     })
 
     res.json(allPosts)

@@ -15,6 +15,12 @@ export default class Kebab extends Component {
             kebabClass: !this.state.kebabClass
         })
     }
+    deleteItem = () => {
+        Axios.delete(`/closet/${this.props.id}/${this.props.clothingId}`
+        ).then(res => {
+            this.props.refreshClothing()
+        })
+    }
     updateOutfit = fit => {
         this.setState({
             kebabClass: !this.state.kebabClass
@@ -25,7 +31,6 @@ export default class Kebab extends Component {
         })
     }
     onClick = change => {
-        console.log("change")
         this.setState({
             kebabClass: !this.state.kebabClass
         })
@@ -44,6 +49,7 @@ export default class Kebab extends Component {
         
             </div>
             <ul className= {`dropdown ${this.state.kebabClass === false ? '': "active"}`}>
+            <h3 onClick = {this.deleteItem}>Delete Item</h3>
             <h3 className = "dropdown__text" onClick = {this.createOutfit} >Create New </h3>
             {fits}
           </ul>

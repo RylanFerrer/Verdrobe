@@ -17,6 +17,13 @@ export default class Closet extends Component {
             })
         })
     }
+    refreshClothes = () => {
+        Axios.get(`/closet/${this.props.id}`).then(res => {
+            this.setState({
+                clothing: res.data.clothing
+            })
+        })
+    }
     onChangeFunc = optionSelected => {
         const label = optionSelected.label;
         this.setState({
@@ -45,13 +52,15 @@ export default class Closet extends Component {
                 <div key = {index} className = "card">
                     <div className = "card__overlay">
                         <img  className = "card__image"alt = "somthing" src = {cloth.image}/>
-                        <Kebab refresh = {this.refreshOutfits} outfits = {this.state.outfits} clothingId = {cloth._id} id = {this.props.id}/>
+                        <Kebab refreshClothing  = {this.refreshClothes} refresh = {this.refreshOutfits} outfits = {this.state.outfits} clothingId = {cloth._id} id = {this.props.id}/>
                     </div>
                 </div>
             )
            }
            return null
         })
+
+
         return (
             <div>
                 <Hero  id = {this.props.id}name = {this.state.name}/>

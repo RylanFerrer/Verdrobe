@@ -9,7 +9,6 @@ export default function FeedFit(props) {
             const response = await axios.get(`/outfit/${props.match.params.id}`);
             // We have a response, but let's first check if component is still mounted
             if (mounted) {
-              console.log(response);
               setClothes(response.data[0])
             }
           };
@@ -24,9 +23,7 @@ export default function FeedFit(props) {
         return  (
         
         <div key = {index} className = "card">
-            <div className = "card__overlay">
-                <img alt ="clothes" height = {200} width = {200}src = {clothe.image}/>
-            </div>
+            <img alt ="clothes" className = "card__image" src = {clothe.image}/>
         </div>
         );
     })

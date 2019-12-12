@@ -16,6 +16,10 @@
 @import "./partials/profile";
 
  body {
-
+    background-color: #fafafa;
     font-family: AvenirRegular
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }

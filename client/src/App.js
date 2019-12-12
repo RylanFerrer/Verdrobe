@@ -23,8 +23,8 @@ function App() {
     <Route path = "/outfits/:id" component = {Auth(Fits)}/>
     <Route path = "/feed" exact component = {Auth(Feed)}/>
     <Route path = "/feed/:id" exact component = {Auth(FeedFit)}/>
-    <Route path = "/profile/:id" exact component = {Auth(Profile)}/>
- 
+    <Route path = "/profile/:id"  component = {Auth(Profile)}/>
+    <Route path = "/register" component = {Feed}/>
   </Switch>
   );
 }

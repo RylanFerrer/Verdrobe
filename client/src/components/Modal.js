@@ -14,7 +14,6 @@ export default class Modal extends React.Component {
     this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
   }
   submit = () => {
-    console.log(this.state.options)
     Axios.post(`/upload/${this.props.id}/tags`, {
       clothingId: this.props.clothingId,
       colors: this.state.colorOptions,

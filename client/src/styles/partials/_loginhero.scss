@@ -92,6 +92,9 @@
     } 
 }
 @include medium {
+    .login__input {
+        margin-top:50px;
+    }
     .login-hero {
         &__image {
             width: 60vw;

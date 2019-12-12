@@ -26,6 +26,10 @@ app.use('/outfit', require("./routes/api/outfit"));
 app.get('/checkToken', withAuth , (req,res) => {
    return  res.json({id: req.id}).status(200);
 });
+app.get('/logout', (req,res) => {
+    res.clearCookie('token');
+    return res.status(200).redirect('/');
+})
 
 app.listen(PORT, (req,res)=> {
     console.log(`Server is running on PORT ${PORT}`)

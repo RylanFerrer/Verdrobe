@@ -14,7 +14,7 @@ export default function LoginHero(props) {
                     <h1 className = "login-hero__header">Welcome to Verdrobe</h1>
                     <h3 className = "login-hero__header login-hero__header--sub"> Organize your clothing and curate outfits all in one place.</h3>
                     <div className = "login-hero__btn-container">
-                        <button class="enjoy-css">Join Us</button>
+                        <button className="enjoy-css">Join Us</button>
                     </div>
       
                 </div>
