@@ -9,6 +9,7 @@ import Auth from './components/Auth'
 import Outfits from './components/Outfits'
 import Fits from "./components/Fits"
 import Feed from "./components/Feed"
+import Register from './components/Register'
 import "./styles/main.css"
 import "font-awesome/css/font-awesome.min.css";
 import './App.css';
@@ -24,7 +25,7 @@ function App() {
     <Route path = "/feed" exact component = {Auth(Feed)}/>
     <Route path = "/feed/:id" exact component = {Auth(FeedFit)}/>
     <Route path = "/profile/:id"  component = {Auth(Profile)}/>
-    <Route path = "/register" component = {Feed}/>
+    <Route path = "/register" component = {Register}/>
   </Switch>
   );
 }

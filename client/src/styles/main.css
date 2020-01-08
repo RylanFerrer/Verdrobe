@@ -44,18 +44,27 @@
 
 .hero__image {
   height: 80vw;
-  margin-top: 50px;
 }
 
 .hero__header {
   font-family: AvenirRegular;
   color: white;
   text-align: center;
+  margin-top: 30%;
 }
 
 @media only screen and (min-width: 768px) {
   .hero__image {
     height: 40vw;
+  }
+  .hero__header {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .hero__image {
+    height: 30vw;
   }
 }
 

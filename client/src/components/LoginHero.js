@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginForm from './LoginForm'
+import {Link} from 'react-router-dom'
 import Heroimg from '../assets/Icons/SVG/undraw_shopping_eii3.svg'
 
 export default function LoginHero(props) {
@@ -14,7 +15,7 @@ export default function LoginHero(props) {
                     <h1 className = "login-hero__header">Welcome to Verdrobe</h1>
                     <h3 className = "login-hero__header login-hero__header--sub"> Organize your clothing and curate outfits all in one place.</h3>
                     <div className = "login-hero__btn-container">
-                        <button className="enjoy-css">Join Us</button>
+                      <Link to = "/register"><button className="enjoy-css">Join Us</button></Link>  
                     </div>
       
                 </div>

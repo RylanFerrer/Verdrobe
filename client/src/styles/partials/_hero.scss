@@ -10,14 +10,13 @@
     justify-content: flex-start;
 
     &__image {
-   
         height: 80vw;
-        margin-top: 50px;
     }
     &__header {
         font-family: AvenirRegular;
         color: white;
         text-align: center;
+        margin-top: 30%;
     }
 }
 @include medium {
@@ -25,8 +24,17 @@
         &__image {
             height: 40vw
         }
-
+        &__header {
+            margin-top: 5%;
+        }
     }
   
+}
+@include large {
+    .hero {
+        &__image {
+            height: 30vw;
+        }
+    }
 }
 
