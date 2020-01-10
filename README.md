@@ -139,13 +139,12 @@ Blog Post: [https://blog.brainstation.io/brainstation-graduate-showcase-fall-201
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-url]: https://github.com/othneildrew/RylanFerrer/Verdrobe
+[forks-shield]: https://img.shields.io/github/forks/RylanFerrer/Verdrobe
 [forks-url]: https://github.com/RylanFerrer/Verdrobe/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-shield]:https://img.shields.io/github/stars/RylanFerrer/Verdrobe
 [stars-url]: https://github.com/RylanFerrer/Verdrobe/stargazers
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-
+[license-shield]: https://img.shields.io/github/license/RylanFerrer/Verdrobe
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/rylan-ferrer-13b772178/
 [product-screenshot]: https://res.cloudinary.com/rylanf/image/upload/v1578696951/aaaa_uggu63.png
