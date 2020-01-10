@@ -12,8 +12,6 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -49,16 +47,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://blog.brainstation.io/brainstation-graduate-showcase-fall-2019/)
 
 Verdrobe is a Machine Learning Web Applcation that helps users organize their wardobe, curate outfits and share them with friends. 
 
 ### Built With
 
-* [React]
-* [Express.js]
-* [Node.js]
-* [MongoDB]
+* React
+* Express.js
+* Node.js
+* MongoDB
 
 
 
@@ -102,6 +100,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 Project Link: [https://github.com/RylanFerrer/Verdrobe](https://github.com/RylanFerrer/Verdrobe)
+Blog Post: [https://blog.brainstation.io/brainstation-graduate-showcase-fall-2019/](https://blog.brainstation.io/brainstation-graduate-showcase-fall-2019/)
 
 
 
@@ -142,13 +141,11 @@ Project Link: [https://github.com/RylanFerrer/Verdrobe](https://github.com/Rylan
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[forks-url]: https://github.com/RylanFerrer/Verdrobe/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[stars-url]: https://github.com/RylanFerrer/Verdrobe/stargazers
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/rylan-ferrer-13b772178/
 [product-screenshot]: https://res.cloudinary.com/rylanf/image/upload/v1578696951/aaaa_uggu63.png
