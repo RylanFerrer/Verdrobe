@@ -12,9 +12,7 @@ export default function Feed(props) {
             const response = await axios.get(`/feed/${props.id}`);
             // We have a response, but let's first check if component is still mounted
               setFeed(response.data)
-            
           };
-
           loadData()
         }
     })

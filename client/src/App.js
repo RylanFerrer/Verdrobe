@@ -10,6 +10,7 @@ import Outfits from './components/Outfits'
 import Fits from "./components/Fits"
 import Feed from "./components/Feed"
 import Register from './components/Register'
+import Search from './components/Search'
 import "./styles/main.css"
 import "font-awesome/css/font-awesome.min.css";
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
     <Route path = "/feed/:id" exact component = {Auth(FeedFit)}/>
     <Route path = "/profile/:id"  component = {Auth(Profile)}/>
     <Route path = "/register" component = {Register}/>
+    <Route path = '/search' component  = {Auth(Search)}/>
   </Switch>
   );
 }

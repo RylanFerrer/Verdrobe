@@ -17,6 +17,10 @@ router.get('/:id', asyncHandler(async(req,res) => {
 
     res.json(allPosts)
 }))
+router.get('/search/:name', async(req,res) => {
+    const searchedUsers = await User.find({name: {$regex: req.params.name, $options: 'i'}})
+    res.json(searchedUsers)
+})
 router.get('/profile/:profileid', asyncHandler(async(req,res) => {
     const profile =  await User.findOne({_id: req.params.profileid})
     const profileInfo = {

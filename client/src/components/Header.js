@@ -19,7 +19,6 @@ export default function Header(props) {
         <nav>
         <div className="topnav">
         <Link to="/" className="navactive"><span>V</span>erdrobe</Link>
-     
         <div  className="icon" onClick={() => setDisplay(changeDisplay)}>
           <i className="fa fa-bars"></i>
         </div>
@@ -28,6 +27,7 @@ export default function Header(props) {
           <Link className = {`${color} drop`} to = "/upload">Upload</Link>
           <Link className = {`${color} drop`} to = "/outfits">Outfits</Link>
           <Link  className = {`${color} drop`} to = "/feed">Feed</Link>
+          <Link className = {`${color} drop`} to = "/search">Search</Link>
           <Link  className = {`${color} drop`} to = {`/profile/${props.id}`}>Profile</Link>
           <li onClick  = {removeCoookie}className = {`${color} drop`} to = {`/profile/${props.id}`}>Logout</li>
 
