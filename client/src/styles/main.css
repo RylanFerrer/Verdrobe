@@ -1144,10 +1144,17 @@
   border-radius: 10px;
   padding: 5px;
   border: 2px solid black;
-  text-indent: 30px;
+  text-indent: 15px;
   outline: none;
-  width: 30%;
+  width: 80%;
   height: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .register__form-input {
+    width: 30%;
+    text-indent: 30px;
+  }
 }
 
 body {

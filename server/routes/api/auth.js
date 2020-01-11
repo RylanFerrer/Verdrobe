@@ -11,7 +11,7 @@ router.post("/", (req,res) => {
         if(err) {
             console.log(err);
             res.status(500).json({
-                error: 'Internal error please try again'
+               message: 'Internal error please try again'
             });
             // if the user does not exist
         } else if (!user) {

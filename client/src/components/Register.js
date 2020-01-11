@@ -14,7 +14,7 @@ const Register = (props) => {
             if(res.status === 200) {
                 props.history.push('/');
             } else {
-                alert('ERROR')
+                alert("Email is already registered")
             }
         })
     }
