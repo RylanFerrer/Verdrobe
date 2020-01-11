@@ -79,9 +79,14 @@ npm install
   npm install
 ```
 
-4. Enter your API in `key.js` in the server folder
+4. In the server folder create a file named key.js and copy as follows
 ```JS
-const API_KEY = 'ENTER YOUR API';
+module.exports = {
+    cloud_name: "Enter Cloudinary Cloud Name Here",
+    api_key: "Enter Cloudinary API Key Here",
+    api_secret: "Enter Cloudinary Secret API Key Here",
+    clarifai: "Enter Clarifai API Key Here"
+}
 ```
 
 
