@@ -12,13 +12,13 @@ app.use(fileUpload({
 }));
 
 app.use(bodyParser.json());
-app.use(express.static(___dirname + './../client/build'));
+app.use(express.static(__dirname + './../build'));
 app.use(cookieParser());
 
 mongoose.connect("mongodb+srv://admin-rylan:Sonicrfx4+@cluster0-mw7yc.mongodb.net/verdrobeDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 app.get('*', (req, res) => {
-    res.sendFile('index.html',{root: ___dirname + './../client/build'});
+    res.sendFile('index.html',{root:  __dirname + './../build'});
 });
 app.use('/upload', require("./routes/api/upload"))
 app.use('/feed', require("./routes/api/feed"))
